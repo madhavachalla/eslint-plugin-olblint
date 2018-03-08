@@ -21,8 +21,13 @@ var ruleTester = new RuleTester();
 ruleTester.run("enforce-i18n", rule, {
 
     valid: [
-
-        // give me some code that won't trigger a warning
+        {
+            code: "this.view.oneTimeTransfer.tbxBankAddressLine2.text = kony.i18n.getLocalizedString(\"i18nkey\")",
+            errors: [{
+                message: "Fill me in.",
+                type: "Me too"
+            }]
+        }
     ],
 
     invalid: [
