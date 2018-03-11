@@ -21,22 +21,15 @@ var ruleTester = new RuleTester();
 ruleTester.run("no-require-usage", rule, {
 
     valid: [
-        {
-            code: "requirxe('');",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    
+        "requirxe('');",
     ],
 
     invalid: [
         {
             code: "require('');",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "Require should not be used",
+                type: "CallExpression"
             }]
         }
     ]

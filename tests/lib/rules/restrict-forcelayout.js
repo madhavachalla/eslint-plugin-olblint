@@ -21,22 +21,15 @@ var ruleTester = new RuleTester();
 ruleTester.run("restrict-forcelayout", rule, {
 
     valid: [
-
-        {
-            code: "this.view.forceLayoutx();",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
+             "this.view.forceLayoutx();"
     ],
 
     invalid: [
         {
             code: "this.view.forceLayout();",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "Forcelayout usage may not be required",
+                type: "MemberExpression"
             }]
         }
     ]
