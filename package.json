@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-olblint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helps linting OLB code",
   "keywords": [
     "eslint",

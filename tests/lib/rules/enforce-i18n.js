@@ -21,12 +21,20 @@ var ruleTester = new RuleTester();
 ruleTester.run("enforce-i18n", rule, {
 
     valid: [
-            "this.view.oneTimeTransfer.tbxBankAddressLine2.text = kony.i18n.getLocalizedString(\"i18nkey\")",
+        "this.view.oneTimeTransfer.tbxBankAddressLine2.text = \"\"",
+        "tbxHello.text = \"Yo\""
     ],
 
     invalid: [
         {
             code: "this.view.AddRecipientAccount.lblIBANOrIRC.text = \"International Account Number (IBAN)\"",
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: "this.view.oneTimeTransfer.lblBankAddressLine2.text = \"XYZ\"",
             errors: [{
                 message: "Avoid assigning literal to a text property. Use a i18n key instead",
                 type: "AssignmentExpression"
