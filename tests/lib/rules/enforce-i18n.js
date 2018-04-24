@@ -39,6 +39,20 @@ ruleTester.run("enforce-i18n", rule, {
                 message: "Avoid assigning literal to a text property. Use a i18n key instead",
                 type: "AssignmentExpression"
             }]
+        },
+        {
+            code: "this.view.oneTimeTransfer.tbxBankAddressLine2.placeholder = \"XYZ\"",
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: "this.view.oneTimeTransfer.btnBankAddressLine2.toolTip = \"XYZ\"",
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
         }
     ]
 });
