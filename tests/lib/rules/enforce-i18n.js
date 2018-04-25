@@ -22,7 +22,8 @@ ruleTester.run("enforce-i18n", rule, {
 
     valid: [
         "this.view.oneTimeTransfer.tbxBankAddressLine2.text = \"\"",
-        "tbxHello.text = \"Yo\""
+        "tbxHello.text = \"Yo\"",
+        "this.xyz = true"
     ],
 
     invalid: [
