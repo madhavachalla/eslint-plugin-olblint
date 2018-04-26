@@ -23,7 +23,8 @@ ruleTester.run("enforce-i18n", rule, {
     valid: [
         "this.view.oneTimeTransfer.tbxBankAddressLine2.text = \"\"",
         "tbxHello.text = \"Yo\"",
-        "this.xyz = true"
+        "this.xyz = true",
+        "data[data.length - 1].imgMoveDown = \"disable_down_btn.png\""
     ],
 
     invalid: [
