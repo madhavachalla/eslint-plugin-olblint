@@ -31,6 +31,38 @@ ruleTester.run("enforce-i18n", rule, {
                 text: kony.i18n.getLocalizedString(\"dncj\")
             }
         `,
+        `
+        var MakeTransferData = {
+            "btnAction": "btnAction",
+            "flxAccountName": "flxAccountName",
+            "flxAccountType": "flxAccountType",
+            "flxBankName": "flxBankName",
+            "flxDropdown": "flxDropdown",
+            "flxMakeTransfersTransfersUnselected": "flxMakeTransfersTransfersUnselected",
+            "flxRow": "flxRow",
+            "imgDropdown": "imgDropdown",
+            "lblAccountName": "lblAccountName",
+            "lblAccountType": "lblAccountType",
+            "lblBankName": "lblBankName",
+            "lblSeparator": "lblSeparator",
+            "flxWireTransferMakeTransfersSelected": "flxWireTransferMakeTransfersSelected",
+            "lblIdentifier": "lblIdentifier",
+            "flxIdentifier": "flxIdentifier",
+            "lblAccountHolder": "lblAccountHolder",
+            "lblAccountNumber": "lblAccountNumber",
+            "lblRoutingNumber": "lblRoutingNumber",
+            "lblAccountNumberValue": "lblAccountNumberValue",
+            "lblAccountTypeValue": "lblAccountTypeValue",
+            "lblAddedOnValue": "lblAddedOnValue",
+            "lblSwiftCode": "lblSwiftCode",
+            "lblIBANNo": "lblIBANNo",
+            "lblBankDetailsTitle": "lblBankDetailsTitle",
+            "lblRoutingNumberValue": "lblRoutingNumberValue",
+            "lblIBANNumber": "lblIBANNumber",
+            "lblBankAddressValue": "lblBankAddressValue",
+            "lblRowSeperator": "lblRowSeperator"
+        };
+        `
     ],
 
     invalid: [
