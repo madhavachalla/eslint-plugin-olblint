@@ -24,7 +24,13 @@ ruleTester.run("enforce-i18n", rule, {
         "this.view.oneTimeTransfer.tbxBankAddressLine2.text = \"\"",
         "tbxHello.text = \"Yo\"",
         "this.xyz = true",
-        "data[data.length - 1].imgMoveDown = \"disable_down_btn.png\""
+        "this.view.lblZYZ.text = \"\"",
+        "data[data.length - 1].imgMoveDown = \"disable_down_btn.png\"",
+        `
+            var x = {
+                text: kony.i18n.getLocalizedString(\"dncj\")
+            }
+        `,
     ],
 
     invalid: [
@@ -54,6 +60,67 @@ ruleTester.run("enforce-i18n", rule, {
             errors: [{
                 message: "Avoid assigning literal to a text property. Use a i18n key instead",
                 type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: `
+                var x = {
+                    text: 'XHHXHXD'
+                }
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "Property"
+            }]
+        },
+        {
+            code: `
+                this.view.lblText.text = "Hi" + dsbjsdfbj.sbdj;
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: `
+                this.view.lblText.text = dsbjsdfbj.sbdj + "Hi";
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: `
+                this.view.lblXyz.text = "Hi" + kxojco.xncjk + "Texf" + sdnjs.sdhs;
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: `
+                var x = {
+                    lblSFDFDHSV: 'XHHXHXD',
+                    tbxYDJD: {
+                        text: 'hello',
+                        placeholder: 'sjbdujs'
+                    }  
+                }
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "Property"
+            },
+            {
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "Property"
+            },
+            {
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "Property"
             }]
         }
     ]
