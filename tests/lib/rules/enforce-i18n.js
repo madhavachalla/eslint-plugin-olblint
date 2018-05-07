@@ -93,6 +93,15 @@ ruleTester.run("enforce-i18n", rule, {
         },
         {
             code: `
+                    this.view.CopylblPendingTransactions0a979ad50321149.text = secondTable[0].lblTransactionHeader + " TRANSACTIONS";;
+            `,
+            errors: [{
+                message: "Avoid assigning literal to a text property. Use a i18n key instead",
+                type: "AssignmentExpression"
+            }]
+        },
+        {
+            code: `
                 this.view.lblXyz.text = "Hi" + kxojco.xncjk + "Texf" + sdnjs.sdhs;
             `,
             errors: [{
