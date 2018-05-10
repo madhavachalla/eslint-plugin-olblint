@@ -62,6 +62,12 @@ ruleTester.run("enforce-i18n", rule, {
             "lblBankAddressValue": "lblBankAddressValue",
             "lblRowSeperator": "lblRowSeperator"
         };
+        `,
+        `
+        var xMap = {
+            lblSFDFDHSV: 'XHHXHXD',
+            tbxYDJD: 'fhjdsxujbfc' 
+        }
         `
     ],
 
