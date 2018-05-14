@@ -68,7 +68,10 @@ ruleTester.run("enforce-i18n", rule, {
             lblSFDFDHSV: 'XHHXHXD',
             tbxYDJD: 'fhjdsxujbfc' 
         }
-        `
+        `,
+        `var x  = {
+            100: 'true'
+        }`
     ],
 
     invalid: [
