@@ -39,6 +39,28 @@ ruleTester.run("no-mvc-navigation", rule, {
                 message: "Avoid using kony MVC Navigation Methods",
                 type: "MemberExpression"
             }]
+        },
+        {
+            code: `
+            function x(CommonUtilites) {
+                return {
+                    onNavigate:0,
+                }
+              }
+            `,
+            errors: [{
+                message: "Do not use onNavigate method as it is reserved keyword for MDA2.0",
+                type: "Identifier"
+            }]
+        },
+        {
+            code: `
+            onNavigate("SendRequest");
+            `,
+            errors: [{
+                message: "Do not use onNavigate method as it is reserved keyword for MDA2.0",
+                type: "Identifier"
+            }]
         }
     ]
 });
